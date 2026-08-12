@@ -145,6 +145,26 @@ SITIOS = {
         "precio": "Gratis",
         "nota": "Plan del día 6: salir 9:30 de la base, llegar a Luss 11:15, salir a las 14:45 hacia el aeropuerto (15:20) para el vuelo de 18:15.",
     },
+    "Glen Etive": {
+        "lat": 56.6160599, "lon": -4.9630606,
+        "categoria": "🌄 Valle (desvío opcional)",
+        "rating": 4.9,
+        "descripcion": "Desvío de carretera single track por un valle salvaje e inalterado, justo antes de adentrarte en Glencoe. Paisaje dramático y espectacular, famoso por las escenas de Skyfall.",
+        "que_ver": ["Conducir el single track entre montañas", "Paradas fotográficas junto al río Etive", "Sensación de inmensidad: uno de los valles más bellos del oeste"],
+        "horario": "Carretera abierta siempre",
+        "precio": "Gratis",
+        "nota": "Opcional: si vas justo de tiempo para llegar a Oban, puedes saltártelo. Suma ~30-45 min al día.",
+    },
+    "The Hermitage": {
+        "lat": 56.5576063, "lon": -3.6128224,
+        "categoria": "🌲 Parque natural (opcional)",
+        "rating": 4.8,
+        "descripcion": "Bosque del National Trust for Scotland junto al río Braan, a 30 min de la base. Sendero sencillo junto al río con abetos de Douglas gigantes, la cascada Black Linn y el mirador Ossian's Hall.",
+        "que_ver": ["Sendero junto al río Braan (fácil, ~1 h)", "Cascada Black Linn y Ossian's Hall", "Abetos de Douglas gigantes y ardillas residentes"],
+        "horario": "Abierto todo el día (bosque NTS)",
+        "precio": "Gratis · Parking de pago (NTS)",
+        "nota": "Opción para la mañana del día 4 (St Andrews es media jornada). Muy cerca de Dunkeld.",
+    },
 }
 
 # ---------------------------------------------------------------------------
@@ -203,7 +223,7 @@ DIAS = [
         "detalle": [
             "08:30 — Salida hacia Inverness (2h15).",
             "10:45 — Inverness: paseo por el río Ness, catedral y comida.",
-            "12:30 — Castillo de Urquhart (40 min desde Inverness). Abierto hasta las 20:15: hay margen.",
+            "12:30 — Castillo de Urquhart (40 min desde Inverness), a orillas del Lago Ness. Abierto hasta las 20:15: hay margen. Mirador para buscar a Nessie.",
             "15:00 — Vuelta a la base (2h15 por la A9).",
             "⚠️ Lleva tiempo de margen: la A9 es la vía más transitada de las Highlands.",
         ],
@@ -214,6 +234,7 @@ DIAS = [
         "resumen": "Jornada suave: ruinas de la catedral junto al mar, el Old Course y acantilados. Opcional por la mañana: Dunkeld y The Hermitage, a 30 min de la base.",
         "conduccion": "~2 h 30 min total",
         "paradas": ["Blairgowrie Holiday Park", "St Andrews Cathedral", "Blairgowrie Holiday Park"],
+        "paradas_opcionales": ["The Hermitage"],
         "detalle": [
             "Opcional AM — Dunkeld y The Hermitage (sendero junto al río, cascada y abetos gigantes).",
             "10:30 — Salida a St Andrews (1h).",
@@ -228,6 +249,7 @@ DIAS = [
         "resumen": "Glencoe, el valle más dramático de Escocia, y si hay energía, Oban al atardecer. Paisajes de película: la A82 bordea el Loch Lomond de camino.",
         "conduccion": "~5 h total (con Oban) · ~3 h 30 solo Glencoe",
         "paradas": ["Blairgowrie Holiday Park", "Glencoe Visitor Centre", "Oban", "Blairgowrie Holiday Park"],
+        "paradas_opcionales": ["Glen Etive"],
         "detalle": [
             "08:30 — Salida (2h30 hasta Glencoe). La A82 bordea el Loch Lomond: el lago se ve de forma natural.",
             "11:00 — Glencoe Visitor Centre: exposición, casa turf & creel y café. Opcional: desvío a Glen Etive (single track salvaje).",

@@ -110,6 +110,20 @@ def hacer_mapa(dia_idx):
         folium.Marker([s["lat"], s["lon"]], icon=icon, tooltip=nombre,
                       popup=f"<b>{i}. {nombre}</b>").add_to(m)
 
+    # paradas opcionales: estrella ⭐ al margen de la ruta
+    for nombre in dia.get("paradas_opcionales", []):
+        s = data.SITIOS[nombre]
+        icon = folium.DivIcon(
+            html=(
+                "<div style='background:#f59f00;color:#fff;border:2px solid #fff;"
+                "border-radius:50%;width:26px;height:26px;display:flex;align-items:center;"
+                "justify-content:center;font-weight:700;font-size:13px;"
+                "box-shadow:0 1px 4px rgba(0,0,0,.4)'>⭐</div>"
+            )
+        )
+        folium.Marker([s["lat"], s["lon"]], icon=icon, tooltip=f"Opción: {nombre}",
+                      popup=f"<b>⭐ Opcional: {nombre}</b>").add_to(m)
+
     # ajustar vista al bbox de la ruta
     lats = [p[1] for p in geom]
     lons = [p[0] for p in geom]
@@ -145,6 +159,26 @@ for i, nombre in enumerate(dia["paradas"], start=1):
         f"</div>",
         unsafe_allow_html=True,
     )
+
+# ---------------------------------------------------------------- opcionales
+if dia.get("paradas_opcionales"):
+    st.subheader("⭐ Opcionales y desvíos")
+    for nombre in dia["paradas_opcionales"]:
+        s = data.SITIOS[nombre]
+        rating = f"<span class='rating'>★ {s['rating']}</span>" if s["rating"] else ""
+        qv = "<ul class='qv'>" + "".join(f"<li>{q}</li>" for q in s["que_ver"]) + "</ul>"
+        nota = f"<div class='nota'>💡 {s['nota']}</div>" if s.get("nota") else ""
+        st.markdown(
+            f"<div class='tarjeta'>"
+            f"<div class='cat'>{s['categoria']} {rating}</div>"
+            f"<div class='nom'>⭐ {nombre}</div>"
+            f"<div class='hor'>🕘 {s['horario']} &nbsp;·&nbsp; <span class='pre'>💷 {s['precio']}</span></div>"
+            f"<div class='desc'>{s['descripcion']}</div>"
+            f"<div class='qv'><b>Qué ver:</b>{qv}</div>"
+            f"{nota}"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
 
 st.divider()
 st.caption(
