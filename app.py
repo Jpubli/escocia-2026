@@ -82,6 +82,7 @@ st.subheader("🗺️ Mapa de la ruta")
 st.link_button("Abrir ruta en Google Maps", data.MAPS[dia["dia"]], type="primary")
 
 def hacer_mapa(dia_idx):
+    dia = next(d for d in data.DIAS if d["dia"] == dia_idx)
     ruta = RUTAS[str(dia_idx)]
     geom = ruta["geometry"]  # [[lon, lat], ...]
     paradas = dia["paradas"]
